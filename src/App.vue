@@ -4,7 +4,7 @@
       <pp-header></pp-header>
     </div>
     <div class="container">
-      <pp-menu></pp-menu>
+      <pp-admin></pp-admin>
     </div>
     <div class="container">
       <pp-footer></pp-footer>
@@ -14,9 +14,10 @@
 </template>
 
 <script>
-import Header from './components/Header.vue';
+import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
+import Admin from './components/Admin';
 import Menu from './components/Menu';
 
 export default {
@@ -24,6 +25,7 @@ export default {
   components: {
     ppHeader: Header,
     ppFooter: Footer,
+    ppAdmin: Admin,
     ppHome: Home,
     ppMenu: Menu
   }
