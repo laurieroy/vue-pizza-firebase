@@ -49,15 +49,22 @@
 				</table>
 			</div>
 		</div>
-	
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 col-lg-6">
+				<pp-login></pp-login>
+			</div>
+		</div>
 	</div>
 </template>
 
 <script>
 import NewPizza from './NewPizza';
+import Login from './Login';
 
 export default {
 	components: {
+		ppLogin: Login,
 		ppNewPizza: NewPizza
 	}
 }
