@@ -1,18 +1,20 @@
 <template>
 	<header class="row">
-		<nav class="navbar navbar-toggleable-md navbar-light">
+		<nav class="navbar navbar-expand-md navbar-light">
 			<a href="/" class="navbar-brand">PIZZA PLANET</a>
 			<ul class="navbar-nav">
-				<li class="nav-item">
-					<a href="" class="nav-link">home</a>
-				</li>
-				<li class="nav-item">
-					<a href="" class="nav-link">menu</a>
-				</li>
+				<router-link :to="{ name: 'homeLink' }" tag="li" class="nav-link">home</router-link>
+				<router-link :to="{ name: 'menuLink' }"  tag="li" class="nav-link">menu</router-link>
 			</ul>
 		</nav>
 	</header>
 </template>
+
+<script>
+export default {
+
+}
+</script>
 
 <style>
 header {

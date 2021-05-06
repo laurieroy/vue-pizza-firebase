@@ -4,30 +4,38 @@
       <pp-header></pp-header>
     </div>
     <div class="container">
-      <pp-admin></pp-admin>
+      <router-view></router-view>
     </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          <router-view name="ordering-guide"></router-view>
+        </div>
+        <div class="col-sm-12 col-md-4">
+           <router-view name="delivery"></router-view>
+        </div>
+        <div class="col-sm-12 col-md-4">
+           <router-view name="history"></router-view>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
       <pp-footer></pp-footer>
     </div>
-
   </div>
 </template>
 
 <script>
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './components/Home';
-import Admin from './components/Admin';
-import Menu from './components/Menu';
 
 export default {
   name: 'app',
   components: {
     ppHeader: Header,
     ppFooter: Footer,
-    ppAdmin: Admin,
-    ppHome: Home,
-    ppMenu: Menu
   }
 
 }
