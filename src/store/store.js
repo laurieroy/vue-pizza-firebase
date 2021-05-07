@@ -37,7 +37,7 @@ export const store = new Vuex.store({
 				]
 			},
 			3: {
-				name: "Ham and Pineapple",
+				name: "Hawaiian",
 				description:
 					"A delicious tomato based pizza topped with mozzarella, ham and pineapple",
 				options: [
@@ -51,6 +51,11 @@ export const store = new Vuex.store({
 					}
 				]
 			}
-		}	
+		},
+		orders: []
+	},
+	getters: {
+		getMenuItems: state => state.menuItems,
+		numberOfOrders: state => state.orders.length	
 	}
 })
