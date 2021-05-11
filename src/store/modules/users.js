@@ -9,6 +9,7 @@ const mutations = {
 		} else {
 			state.currentUser = null
 		}
+	}
 }
 
 const getters = {
@@ -20,6 +21,7 @@ const actions = {
 		commit('userStatus', user)
 	}
 }
+
 export default {
 	state,
 	mutations,
