@@ -13,10 +13,11 @@
 							<th>Remove from menu</th>
 						</tr>
 					</thead>
-					<tbody v-for="item in getMenuItems">
+					<tbody v-for="item in getMenuItems" :key="item['.key']">
 						<tr>
 							<td>{{item.name}}</td>
-							<td><button class="btn btn-sm btn-outline-danger">x</button></td>
+							<td><button class="btn btn-sm btn-outline-danger"
+								@click="removeMenuItem(item['.key'])">x</button></td>
 						</tr>
 					</tbody>
 				</table>
@@ -25,7 +26,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<h3>Current Orders: {{numberOfOrders}} </h3>
-				<table class="table table-sm" v-for="orders in getOrders">
+				<table class="table table-sm" v-for="(orders, index) in getOrders"  :key="orders['.key']>
 					<thead class="thead-default">
 						<tr>
 							<th>Item</th>
@@ -36,8 +37,10 @@
 					</thead>
 					<tbody>
 						<div class="order-number">
-							<strong><em>Order Number: 1</em></strong>
-							<button class="btn btn-sm btn-outline-danger">x</button>
+							<strong><em>Order Number: {{ index +1 }}</em></strong>
+							<button class="btn btn-sm btn-outline-danger"
+								@click="removeOrderItem(orders['.key'])"
+							>x</button>
 						</div>
 						<tr v-for="orderItems in orders['.value']">
 							<td>{{ orderItems.name }}</td>
@@ -61,7 +64,8 @@
 <script>
 import NewPizza from './NewPizza';
 import Login from './Login';
-import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
+import { dbMenuRef, dbOrdersRef } from '../firebaseConfig';
 
 export default {
 	components: {
@@ -80,6 +84,14 @@ export default {
 		// numberOfOrders() {
 		// 	return this.$store.getters.numberOfOrders
 		// }
+	},
+	methods: {
+		removeMenuItem(key) {
+			dbMenuRef.child(key).remove()
+		},
+		removeOrderItem(key) {
+			dbOrdersRef.child(key).remove()
+		}
 	},
 	beforeRouteLeave: (to, from, next) => {
 		if(confirm("Have you remembered to log out?") === true ) {
