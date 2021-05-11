@@ -1,16 +1,15 @@
 
-// import Admin from './components/Admin';
-// import About from './components/About';
+import Admin from './components/Admin';
+import About from './components/About';
 import Contact from './components/Contact';
 import Delivery from './components/Delivery';
 import History from './components/History'
 import Home from './components/Home'
 import OrderingGuide from './components/OrderingGuide'
-
-// import Menu from './components/Menu'
-const About = () => import(/* webpackChunkName: "footer-group" */'./components/About')
-const Admin = () => import(/* webpackChunkName: "footer-group" */'./components/Admin')
-const Menu = () => import('./components/Menu')
+import Menu from './components/Menu'
+// const About = () => import(/* webpackChunkName: "footer-group" */'./components/About')
+// const Admin = () => import(/* webpackChunkName: "footer-group" */'./components/Admin')
+// const Menu = () => import('./components/Menu')
 
 export const routes = [
 	{ path: '/', name: 'homeLink',
