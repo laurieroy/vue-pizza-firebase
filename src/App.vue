@@ -62,4 +62,16 @@ export default {
   margin: 0 auto;
   padding: 20px 0;
   }
+
+  header, footer {
+    background: #ECEEEF;
+    padding: 40px 0;
+    font-size: 1.2em;
+  }
+
+  .card {
+    background: #69AB64;
+    margin: 20px 0;
+    border-radius: 0;
+  }
 </style>

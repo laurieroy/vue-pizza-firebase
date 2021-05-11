@@ -107,4 +107,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+	.order-number {
+		margin: 10px 0;
+	}
+</style>
