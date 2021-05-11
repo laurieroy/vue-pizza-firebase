@@ -1,12 +1,16 @@
 
-import Admin from './components/Admin';
-import About from './components/About';
+// import Admin from './components/Admin';
+// import About from './components/About';
 import Contact from './components/Contact';
 import Delivery from './components/Delivery';
 import History from './components/History'
 import Home from './components/Home'
-import Menu from './components/Menu'
 import OrderingGuide from './components/OrderingGuide'
+
+// import Menu from './components/Menu'
+const About = () => import(/* webpackChunkName: "footer-group" */'./components/About')
+const Admin = () => import(/* webpackChunkName: "footer-group" */'./components/Admin')
+const Menu = () => import('./components/Menu')
 
 export const routes = [
 	{ path: '/', name: 'homeLink',
@@ -18,7 +22,7 @@ export const routes = [
 		} },
   { path: '/menu', name: 'menuLink',  component: Menu },
   { path: '/admin', name: 'adminLink', component: Admin, beforeEnter: (to, from, next) => {
-    alert('This area is for authoerized users only, please login to continue.');
+    alert('This area is for authorized users only, please login to continue.');
     next();
   } },
   { path: '/about', name: 'aboutLink', component: About, children: [
